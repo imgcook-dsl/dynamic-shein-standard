@@ -1,0 +1,99 @@
+<Flex 	flexDirection = "row" 
+	justifyContent = "spaceAround" 
+	alignItems = "flexStart" 
+><Flex ><Flex 	alpha = "1.00" 
+	position = "relative" 
+	flexDirection = "row" 
+	alignItems = "flexStart" 
+><Image
+	width = "171.00" 
+	height = "171.00" 
+	position = "absolute" 
+	top = "0.00" 
+	left = "0.00" 
+	src = "https://img.alicdn.com/tfs/TB1bLoWoYH1gK0jSZFwXXc7aXXa-684-684.png" 
+ />
+
+<Image
+	width = "171.00" 
+	height = "171.00" 
+	alpha = "1.00" 
+	position = "absolute" 
+	top = "0.00" 
+	left = "0.00" 
+	src = "${this.item.coverImage}" 
+ />
+
+<Flex 	paddingRight = "4.50" 
+	paddingLeft = "5.00" 
+	marginTop = "9.00" 
+	marginLeft = "9.00" 
+	position = "relative" 
+	background = "#66000000" 
+	borderRadius = "7.50" 
+	flexDirection = "row" 
+	alignItems = "center" 
+><Image
+	width = "7.00" 
+	height = "9.00" 
+	alpha = "1.00" 
+	src = "https://img.alicdn.com/tfs/TB1mtZRoVT7gK0jSZFpXXaTkpXa-28-36.png" 
+ />
+
+<Text
+	marginLeft = "2.00" 
+	textColor = "#ffffff" 
+	textSize = "9.00" 
+/>
+
+</Flex>
+</Flex><Flex 	background = "#ffffff" 
+	flexDirection = "row" 
+	justifyContent = "center" 
+	alignItems = "flexStart" 
+><Text
+	marginTop = "11.00" 
+	textColor = "#333333" 
+	textSize = "15.00" 
+/>
+
+</Flex><Flex 	paddingRight = "8.50" 
+	paddingLeft = "9.00" 
+	background = "#ffffff" 
+	borderLeftBottomRadius = "6.00" 
+	borderRightBottomRadius = "6.00" 
+	flexDirection = "row" 
+	justifyContent = "spaceBetween" 
+	alignItems = "center" 
+><Flex 	flexDirection = "row" 
+	alignItems = "center" 
+><Image
+	width = "15.00" 
+	height = "15.00" 
+	src = "https://img.alicdn.com/tfs/TB1OvsYoW61gK0jSZFlXXXDKFXa-60-60.png" 
+ />
+
+<Text
+	marginLeft = "3.00" 
+	textColor = "#666666" 
+	textSize = "12.00" 
+/>
+
+</Flex><Flex 	flexDirection = "row" 
+	alignItems = "center" 
+><Image
+	width = "11.00" 
+	height = "11.00" 
+	src = "https://img.alicdn.com/tfs/TB1arwYo7T2gK0jSZFkXXcIQFXa-46-44.png" 
+ />
+
+<Text
+	marginLeft = "2.50" 
+	textColor = "#999999" 
+	textSize = "11.00" 
+/>
+
+</Flex>
+</Flex>
+</Flex>
+</Flex>
