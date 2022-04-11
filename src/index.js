@@ -741,17 +741,17 @@ module.exports = function (schema, option) {
     return {
         panelDisplay: [
           {
-            panelName: `component.xml`,
+            panelName: `dynamic_component_ui.xml`,
             panelType: 'BuilderRaxStyle',
             panelValue: formatXML(`<?xml version="1.0" encoding="utf-8"?>\n${targetDSL}`)
           },
           {
-            panelName: `mock.json`,
+            panelName: `dynamic_data_mock.json`,
             panelType: 'BuilderRaxStyle',
             panelValue: bussinessData
           },
           {
-            panelName: `data.json`,
+            panelName: `dynamic_data_model.json`,
             panelType: 'BuilderRaxStyle',
             panelValue: bussinessData
           }
