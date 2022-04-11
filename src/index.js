@@ -604,7 +604,7 @@ module.exports = function (schema, option) {
     const formatXML = (xml,tab) => {
       let formatted = ''; 
       let indent = '';
-      tab = tab || '\t\t';
+      tab = tab || '\t';
       xml.split(/>\s*</).forEach(function (node) {
           if (node.match(/^\/\w/)) indent = indent.substring(tab.length);
           formatted += indent + '<' + node + '>\r\n';
