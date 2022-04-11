@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Flex  flexDirection="row" justifyContent="spaceAround" alignItems="flexStart">
-	<foreach var="item"  items="${this.state.data}">
+	<foreach var="item"  items="${data}">
 		<Flex  flexDirection="row">
 			<Flex  alpha="1.00" position="relative" flexDirection="row" alignItems="flexStart">
 				<Image  width="171" height="171" position="absolute" src="https://img.alicdn.com/tfs/TB1bLoWoYH1gK0jSZFwXXc7aXXa-684-684.png"/>
@@ -18,7 +18,7 @@
 					<Image  width="15" height="15" src="https://img.alicdn.com/tfs/TB1OvsYoW61gK0jSZFlXXXDKFXa-60-60.png"/>
 					<Text  marginLeft="3" textColor="#666666" textSize="12" text="${item.user.userName}"/>
 				</Flex>
-				<if test="${this.isReadCountShow(item.readCount)}">
+				<if test="${isReadCountShow(item.readCount)}">
 					<Flex  flexDirection="row" alignItems="center">
 						<Image  width="11" height="11" src="https://img.alicdn.com/tfs/TB1arwYo7T2gK0jSZFkXXcIQFXa-46-44.png"/>
 						<Text  marginLeft="3" textColor="#999999" textSize="11" text="${item.readCount}"/>

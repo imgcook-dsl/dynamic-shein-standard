@@ -1,4 +1,6 @@
 module.exports = function (schema, option) {
+
+   console.log("state>>>>"+ JSON.stringify(schema.state));
     /**
      * 获取prettier
      */
@@ -614,6 +616,41 @@ module.exports = function (schema, option) {
     }
 
     /**
+     * 获取mock数据(这里有约定，数据放在state中)，如:
+     * 
+     * "state": {
+          "data": [{
+           "title": "小户型卫浴怎样才能装得高大上？",
+           "coverImage": "https://img.alicdn.com/tfs/TB1Txq6o7T2gK0jSZFkXXcIQFXa-684-684.png",
+           "readCount": 200,
+           "user": {
+              "userImage": "https://img.alicdn.com/tfs/TB1DWe6oYj1gK0jSZFOXXc7GpXa-60-60.png",
+              "userName": "时尚家居"
+           },
+           "url": "https://www.imgcook.com"
+          }, {
+          "title": "拥有超多功能的40平米简约小公寓了解一下",
+          "coverImage": "https://img.alicdn.com/tfs/TB1XRQTo7P2gK0jSZPxXXacQpXa-684-648.png",
+          "readCount": 500,
+          "user": {
+            "userImage": "https://img.alicdn.com/tfs/TB1DWe6oYj1gK0jSZFOXXc7GpXa-60-60.png",
+            "userName": "花花设计工作"
+          },
+          "url": "https://www.imgcook.com/docs"
+        }]
+      }
+     */
+    const parseMockFromSchema = (schema) => {
+      if (!schema) {
+        return {};
+      }
+      if (!schema.state) {
+        return {};
+      }
+      return JSON.stringify(schema.state,null,3);
+    }
+
+    /**
      * 生成目标的dsl(动态布局的dsl)
      * @param {*} schema  schema描述
      * @returns
@@ -691,12 +728,32 @@ module.exports = function (schema, option) {
      * 开始解析
      */
     let targetDSL = transformFromSchema(schema);
+    let re = new RegExp("this.state.", 'g');
+    targetDSL = targetDSL.replace(re, "");
+    re = new RegExp("this.", 'g');
+    targetDSL = targetDSL.replace(re, "");
+
+    /**
+     * 业务数据类型
+     */
+    let bussinessData =   parseMockFromSchema(schema);
+
     return {
         panelDisplay: [
           {
             panelName: `component.xml`,
             panelType: 'BuilderRaxStyle',
             panelValue: formatXML(`<?xml version="1.0" encoding="utf-8"?>\n${targetDSL}`)
+          },
+          {
+            panelName: `mock.json`,
+            panelType: 'BuilderRaxStyle',
+            panelValue: bussinessData
+          },
+          {
+            panelName: `data.json`,
+            panelType: 'BuilderRaxStyle',
+            panelValue: bussinessData
           }
         ],
         prettierOpt: {
