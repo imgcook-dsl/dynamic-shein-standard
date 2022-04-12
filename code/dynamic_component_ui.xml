@@ -1,30 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Flex  flexDirection="row" justifyContent="spaceAround" alignItems="flexStart">
-	<foreach var="item"  items="${data}">
-		<Flex  flexDirection="row">
-			<Flex  alpha="1.00" position="relative" flexDirection="row" alignItems="flexStart">
-				<Image  width="171" height="171" position="absolute" src="https://img.alicdn.com/tfs/TB1bLoWoYH1gK0jSZFwXXc7aXXa-684-684.png"/>
-				<Image  width="171" height="171" alpha="1.00" position="absolute" src="${item.coverImage}"/>
-				<Flex  paddingRight="5" paddingLeft="5" marginTop="9" marginLeft="9" position="relative" background="#66000000" borderRadius="8" flexDirection="row" alignItems="center">
-					<Image  width="7" height="9" alpha="1.00" src="https://img.alicdn.com/tfs/TB1mtZRoVT7gK0jSZFpXXaTkpXa-28-36.png"/>
-					<Text  marginLeft="2" textColor="#ffffff" textSize="9" text="距离500m"/>
-				</Flex>
+<Flex  flexDirection="row">
+	<Flex  position="relative" background="#ffffff" borderRadius="12" flexDirection="column" alignItems="flexStart">
+		<Flex  position="relative" background="#9b9b9b" borderLeftTopRadius="12" borderRightTopRadius="12" flexDirection="row" justifyContent="center" alignItems="flexStart">
+			<Image  width="351" height="197" position="relative" src="https://img.alicdn.com/tfs/TB1oiAbz1H2gK0jSZJnXXaT1FXa-1404-788.png"/>
+			<Image  width="60" height="60" position="absolute" top="69" left="146" src="https://img.alicdn.com/tfs/TB1IpkXz5_1gK0jSZFqXXcpaXXa-240-240.png"/>
+		</Flex>
+		<Flex  position="absolute" top="188" left="12" background="#ffb901" borderRadius="3" flexDirection="row" justifyContent="spaceBetween" alignItems="center">
+			<Flex  flexDirection="row" alignItems="center">
+				<Text  marginLeft="5" textColor="#ffffff" textSize="12" ellipsize="end" text="众筹"/>
 			</Flex>
-			<Flex  background="#ffffff" flexDirection="row" justifyContent="center" alignItems="flexStart">
-				<Text  marginTop="11" textColor="#333333" textSize="15" ellipsize="end" text="${item.title}"/>
-			</Flex>
-			<Flex  paddingRight="9" paddingLeft="9" background="#ffffff" borderLeftBottomRadius="6" borderRightBottomRadius="6" flexDirection="row" justifyContent="spaceBetween" alignItems="center">
-				<Flex  flexDirection="row" alignItems="center">
-					<Image  width="15" height="15" src="https://img.alicdn.com/tfs/TB1OvsYoW61gK0jSZFlXXXDKFXa-60-60.png"/>
-					<Text  marginLeft="3" textColor="#666666" textSize="12" text="${item.user.userName}"/>
-				</Flex>
-				<if test="${isReadCountShow(item.readCount)}">
-					<Flex  flexDirection="row" alignItems="center">
-						<Image  width="11" height="11" src="https://img.alicdn.com/tfs/TB1arwYo7T2gK0jSZFkXXcIQFXa-46-44.png"/>
-						<Text  marginLeft="3" textColor="#999999" textSize="11" text="${item.readCount}"/>
-					</Flex>
-				</if>
+			<Flex  flexDirection="row" alignItems="flexStart">
+				<Text  marginTop="3" textColor="#ffffff" textSize="12" ellipsize="end" text="｜全网首发"/>
 			</Flex>
 		</Flex>
-	</foreach>
+		<Text  marginTop="15" marginLeft="12" position="relative" textColor="#333333" textSize="16" ellipsize="end" text="对饮茶酒 手工茶罐与小对杯"/>
+		<Text  marginTop="8" marginLeft="12" position="relative" textColor="#888888" textSize="13" ellipsize="end" text="宽杯、小杯自在搭配，喝茶喝酒都很适合。手工制宽杯、小杯自在搭配，喝茶喝酒都很适合。手工制做…"/>
+		<Flex  marginTop="11" position="relative" flexDirection="column" alignItems="flexStart">
+			<Flex  marginLeft="4" position="relative" flexDirection="row" alignItems="center">
+				<Flex  marginRight="6" position="relative" background="#ebebeb" borderRadius="2" flexDirection="row" alignItems="center">
+					<Image  width="200" height="3" position="absolute" src="https://img.alicdn.com/tfs/TB1iSj8z4D1gK0jSZFsXXbldVXa-800-12.png"/>
+				</Flex>
+				<Text  textColor="#ff9e00" textSize="13" text="83%"/>
+			</Flex>
+			<Flex  marginTop="2" position="relative" flexDirection="row" alignItems="center">
+				<Flex  marginRight="22" flexDirection="row" alignItems="center">
+					<Text  marginTop="1" textColor="#ff9d00" textSize="13" text="5216"/>
+					<Text  textColor="#999999" textSize="11" text="人支持"/>
+				</Flex>
+				<Flex  flexDirection="row" alignItems="center">
+					<Text  marginTop="1" marginRight="3" textColor="#ff9d00" textSize="13" text="486.52万"/>
+					<Text  textColor="#999999" textSize="11" text="已筹金额"/>
+				</Flex>
+			</Flex>
+		</Flex>
+	</Flex>
 </Flex>

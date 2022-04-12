@@ -1,5 +1,5 @@
 module.exports = function (schema, option) {
-  
+
     /**
      * 获取prettier
      */
@@ -682,6 +682,7 @@ module.exports = function (schema, option) {
             case 'div':
             case 'page':
             case 'block':
+            case 'example':  
                 let flexAttrs = parseContainerAttrsFromProps(schema.props);
                 let otherAttrString = buildAllAttrsWithinTag(flexAttrs);
                 if (schema.children && schema.children.length ) {
