@@ -1,6 +1,5 @@
 module.exports = function (schema, option) {
-
-   console.log("state>>>>"+ JSON.stringify(schema.state));
+  
     /**
      * 获取prettier
      */
@@ -642,10 +641,10 @@ module.exports = function (schema, option) {
      */
     const parseMockFromSchema = (schema) => {
       if (!schema) {
-        return {};
+        return "{\n}";
       }
       if (!schema.state) {
-        return {};
+        return "{\n}";
       }
       return JSON.stringify(schema.state,null,3);
     }
@@ -656,7 +655,7 @@ module.exports = function (schema, option) {
      * @returns
      */
     const generatetTargetDSLWithSchema = (schema) => {
-        let dynamicXML;
+        let dynamicXML = "";
         const type = schema.componentName.toLowerCase();
         switch (type) {
             /**
@@ -736,7 +735,7 @@ module.exports = function (schema, option) {
     /**
      * 业务数据类型
      */
-    let bussinessData =   parseMockFromSchema(schema);
+    let bussinessData =  parseMockFromSchema(schema);
 
     return {
         panelDisplay: [
