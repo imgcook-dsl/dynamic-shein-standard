@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Flex PUBLIC "dynamic schema dtd 1.0 " "https://filetest.ltwebstatic.com/filetest/2022/dynamic1029.dtd">
+<Flex  flexDirection="row" justifyContent="spaceAround" alignItems="flexStart" width="${dynamicContainerWidth}">
+	<foreach var="item"  items="${data}">
+		<Flex  onClick="${window.open(item.url, '_blank')}">
+			<Flex  alpha="1.00" position="relative" flexDirection="row" alignItems="flexStart">
+				<Image  width="171" height="171" position="absolute" src="https://img.alicdn.com/tfs/TB1bLoWoYH1gK0jSZFwXXc7aXXa-684-684.png"/>
+				<Image  width="171" height="171" alpha="1.00" position="absolute" src="${item.coverImage}"/>
+				<Flex  paddingRight="5" paddingLeft="5" marginTop="9" marginLeft="9" position="relative" background="#66000000" borderRadius="8" flexDirection="row" alignItems="center">
+					<Image  width="7" height="9" alpha="1.00" src="https://img.alicdn.com/tfs/TB1mtZRoVT7gK0jSZFpXXaTkpXa-28-36.png"/>
+					<Text  marginLeft="2" textColor="#ffffff" textSize="9" text="距离500m"/>
+				</Flex>
+			</Flex>
+			<Flex  background="#ffffff" flexDirection="row" justifyContent="center" alignItems="flexStart">
+				<Text  marginTop="11" textColor="#333333" textSize="15" ellipsize="end" text="${item.title}"/>
+			</Flex>
+			<Flex  paddingRight="9" paddingLeft="9" background="#ffffff" borderLeftBottomRadius="6" borderRightBottomRadius="6" flexDirection="row" justifyContent="spaceBetween" alignItems="center">
+				<Flex  flexDirection="row" alignItems="center">
+					<Image  width="15" height="15" src="https://img.alicdn.com/tfs/TB1OvsYoW61gK0jSZFlXXXDKFXa-60-60.png"/>
+					<Text  marginLeft="3" textColor="#666666" textSize="12" text="${item.user.userName}"/>
+				</Flex>
+				<if test="${isReadCountShow(item.readCount)}">
+					<Flex  flexDirection="row" alignItems="center">
+						<Image  width="11" height="11" src="https://img.alicdn.com/tfs/TB1arwYo7T2gK0jSZFkXXcIQFXa-46-44.png"/>
+						<Text  marginLeft="3" textColor="#999999" textSize="11" text="${item.readCount}"/>
+					</Flex>
+				</if>
+			</Flex>
+		</Flex>
+	</foreach>
+</Flex>

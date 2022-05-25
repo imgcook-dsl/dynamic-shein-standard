@@ -6,7 +6,7 @@ const path = require('path')
 const prettier = require('prettier')
 const { NodeVM } = require('vm2')
 const _ = require('lodash')
-const data = require('./data1')
+const data = require('./data')
 
 const vm = new NodeVM({
   console: 'inherit',
